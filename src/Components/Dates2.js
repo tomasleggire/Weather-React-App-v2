@@ -40,7 +40,6 @@ const divStyle2 = {
     flexDirection: 'column',
     alignItems: 'start',
     justifyContent: 'space-around',
-    color: 'black',
 }
 
 const divStyle3 = {

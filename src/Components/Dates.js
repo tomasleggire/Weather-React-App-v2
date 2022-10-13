@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function Dates({resApi}) {
 
 
@@ -17,6 +18,7 @@ export default function Dates({resApi}) {
             <div style={divMain3}>
                 <img style={imgStyle2} src="https://cdn-icons-png.flaticon.com/512/2011/2011448.png"/>
                 <span style={spanStyle}>{resApi.wind.speed}</span>
+                
             </div>
     </div>
     )
@@ -32,7 +34,6 @@ const divMain = {
 }
 
 const h1Style = {
-    color: 'black',
     textAlign: 'center',
     fontSize: '18px',
     paddingBottom: '5px',
@@ -43,10 +44,10 @@ const imgStyle1 = {
     height: '60px',
     width: '60px',
     marginTop: '90px',
+    color: 'red',
 }
 
 const h2Style = {
-    color: 'black',
     textAlign: 'center',
     fontSize: '62px',
     paddingTop: '10px',
@@ -61,7 +62,6 @@ const divMain2 = {
 }
 
 const pStyle = {
-    color: 'black',
     paddingTop: '20px',
     paddingBottom: '50px',
     fontSize: '16px',
@@ -69,7 +69,6 @@ const pStyle = {
 }
 
 const pStyle2 = {
-    color: 'black',
     fontSize: '14px',
     textAlign: 'center',
     paddingBottom: '5px',
@@ -89,7 +88,6 @@ const imgStyle2 = {
 }
 
 const spanStyle = {
-    color: 'black',
     fontSize: '18px',
     paddingLeft: '5px',
     fontWeight: '500',
