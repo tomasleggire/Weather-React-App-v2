@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OtherDates2({resApi}) {
+export default function Dates2({resApi}) {
 
 
 
@@ -32,11 +32,11 @@ export default function OtherDates2({resApi}) {
 
 const divStyle = {
     width: '280px',
+    backgroundColor: 'green',
 }
 
 const pStyle = {
     display: 'flex',
-    marginTop: '12px',
     alignItems: 'center',
     color: '#d9d9d9',
     fontWeight: 'bold',

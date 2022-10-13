@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Loading from "./Loading";
-import Error from "./Error";
+import Loading from "./Components/Loading";
+import Error from "./Components/Error";
 import WeatherApp from "./WeatherApp";
 
 function App() {
