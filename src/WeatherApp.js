@@ -4,6 +4,7 @@ import Dates from "./Components/Dates";
 
 export default function WeatherApp({resApi}) {
 
+
      return (
         <div style={divStyle}>
             <Dates resApi={resApi}/>
@@ -11,6 +12,7 @@ export default function WeatherApp({resApi}) {
         </div>
     )
 }
+
 
 
 const divStyle = {
@@ -21,5 +23,3 @@ const divStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
 }
-
-

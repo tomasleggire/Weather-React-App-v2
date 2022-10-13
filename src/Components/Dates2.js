@@ -1,5 +1,10 @@
 import React from "react";
 
+import {WiHumidity} from 'react-icons/wi';
+import {WiWindy} from 'react-icons/wi';
+import {WiBarometer} from 'react-icons/wi';
+import {WiFog} from 'react-icons/wi';
+
 export default function Dates2({resApi}) {
 
 
@@ -10,19 +15,19 @@ export default function Dates2({resApi}) {
                 <span style={spanStyle}>Feels Like</span>
                 <span style={spanStyle}>Humidity</span>
                 <span style={spanStyle}>Pressure</span>
-                <span style={spanStyle}>Wind Speed</span>
+                <span style={spanStyle}>Wind Deg</span>
             </div>
             <div style={divStyle3}>
-                <img style={imgStyle} src="https://cdn-icons-png.flaticon.com/512/2078/2078262.png"/>
-                <img style={imgStyle} src="https://cdn-icons-png.flaticon.com/512/2078/2078262.png"/>
-                <img style={imgStyle} src="https://cdn-icons-png.flaticon.com/512/2078/2078262.png"/>
-                <img style={imgStyle} src="https://cdn-icons-png.flaticon.com/512/2078/2078262.png"/>
+                <WiFog style={imgStyle} />
+                <WiHumidity style={imgStyle} />
+                <WiBarometer style={imgStyle} />
+                <WiWindy style={imgStyle} />
             </div>
             <div style={divStyle4}>
                 <span style={porcentaje}>{Math.round(resApi.main.feels_like) + 'º'}</span>
                 <span style={porcentaje}>{resApi.main.humidity + "%"}</span>
                 <span style={porcentaje}>{resApi.main.pressure}</span>
-                <span style={porcentaje}>{resApi.wind.speed}</span>
+                <span style={porcentaje}>{resApi.wind.deg}</span>
             </div>
         </div>
     )

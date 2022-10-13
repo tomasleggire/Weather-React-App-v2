@@ -1,4 +1,7 @@
 import React from "react";
+import {WiDayCloudy} from 'react-icons/wi';
+import {FiWind} from 'react-icons/fi';
+
 
 
 export default function Dates({resApi}) {
@@ -10,15 +13,14 @@ export default function Dates({resApi}) {
         <h1 style={h1Style}>Buenos Aires, AR</h1>
             <p>Now</p>
             <div style={divMain2}>
-                <img style={imgStyle1} src="https://cdn-icons-png.flaticon.com/512/2932/2932445.png"/>
+                <WiDayCloudy style={imgStyle1}/>
                 <h2 style={h2Style}>{Math.round(resApi.main.temp) + "º"}</h2>
             </div>
             <p style={pStyle}>{resApi.weather[0].description.toUpperCase()}</p>
             <p style={pStyle2}>Wind</p>
             <div style={divMain3}>
-                <img style={imgStyle2} src="https://cdn-icons-png.flaticon.com/512/2011/2011448.png"/>
+                <FiWind style={imgStyle2}/>
                 <span style={spanStyle}>{resApi.wind.speed}</span>
-                
             </div>
     </div>
     )
@@ -41,10 +43,9 @@ const h1Style = {
 }
 
 const imgStyle1 = {
-    height: '60px',
-    width: '60px',
+    height: '65px',
+    width: '65px',
     marginTop: '90px',
-    color: 'red',
 }
 
 const h2Style = {

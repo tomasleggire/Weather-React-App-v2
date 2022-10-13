@@ -5,7 +5,7 @@ import ReactLoading from 'react-loading';
 export default function Loading() {
     return (
       <div style={divStyle}>
-        <ReactLoading type="spin" color="#8eacee" height={150} width={150}/>
+        <ReactLoading type="spin" color='black' height={150} width={150}/>
         <h2 style={h2Style}>Loading...</h2>
       </div>
     )
@@ -19,7 +19,6 @@ const divStyle = {
 }
 
 const h2Style = {
-  color: '#DDD',
   textAlign: 'center',
   marginTop: '20px',
   fontFamily: 'monospace'

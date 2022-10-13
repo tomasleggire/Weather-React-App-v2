@@ -18,7 +18,6 @@ const divStyle = {
   }
   
 const h2Style = {
-    color: '#DDD',
     textAlign: 'center',
     marginTop: '20px',
     fontFamily: 'monospace'
