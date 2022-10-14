@@ -1,6 +1,7 @@
 import React from "react";
 import {WiDayCloudy} from 'react-icons/wi';
 import {FiWind} from 'react-icons/fi';
+import ThemeButton from "./ThemeButton";
 
 
 
@@ -10,7 +11,7 @@ export default function Dates({resApi}) {
 
     return (
     <div style={divMain}>
-        <h1 style={h1Style}>Buenos Aires, AR</h1>
+        <h1 style={h1Style}>Buenos Aires, AR <ThemeButton/> </h1>
             <p>Now</p>
             <div style={divMain2}>
                 <WiDayCloudy style={imgStyle1}/>
