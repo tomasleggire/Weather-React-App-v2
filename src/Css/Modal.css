@@ -1,0 +1,17 @@
+.div {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.dark .div {
+    background-color: rgb(34, 38, 43);
+    color: #dae4e7;
+}
+
+.light .div {
+    background-color: #dae4e7;
+    color: rgb(34, 38, 43);
+}
