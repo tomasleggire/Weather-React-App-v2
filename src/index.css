@@ -23,11 +23,11 @@ code {
 }
 
 .light {
-  background-color: #d8dfe0;
-  color: rgb(71, 62, 62);
+  background-color: #dae4e7;
+  color: rgb(34, 38, 43);
 }
 
 .dark {
-  background-color: rgb(71, 62, 62);
-  color: #d8dfe0;
+  background-color: rgb(34, 38, 43);
+  color: #dae4e7;
 }

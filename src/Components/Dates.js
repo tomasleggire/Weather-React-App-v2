@@ -11,13 +11,13 @@ export default function Dates({resApi}) {
 
     return (
     <div style={divMain}>
-        <h1 style={h1Style}>Buenos Aires, AR <ThemeButton/> </h1>
-            <p>Now</p>
+        <h1 style={h1Style}>Zagreb, Croatia<ThemeButton/> </h1>
+            <p style={pStyleNOW}>Now</p>
             <div style={divMain2}>
                 <WiDayCloudy style={imgStyle1}/>
                 <h2 style={h2Style}>{Math.round(resApi.main.temp) + "º"}</h2>
             </div>
-            <p style={pStyle}>{resApi.weather[0].description.toUpperCase()}</p>
+            <p style={pStyle}>{resApi.weather[0].description[0].toUpperCase() + resApi.weather[0].description.slice(1)}</p>
             <p style={pStyle2}>Wind</p>
             <div style={divMain3}>
                 <FiWind style={imgStyle2}/>
@@ -40,7 +40,13 @@ const h1Style = {
     textAlign: 'center',
     fontSize: '18px',
     paddingBottom: '5px',
-    fontWeight: '700',
+    fontWeight: '600',
+    fontFamily: 'Red Hat Display',
+}
+
+const pStyleNOW = {
+    fontWeight: '600',
+    fontSize: '13px',
 }
 
 const imgStyle1 = {
@@ -51,9 +57,10 @@ const imgStyle1 = {
 
 const h2Style = {
     textAlign: 'center',
-    fontSize: '62px',
+    fontSize: '64px',
     paddingTop: '10px',
     fontWeight: '700',
+    fontFamily: 'Comfortaa',
 }
 
 const divMain2 = {
@@ -67,7 +74,9 @@ const pStyle = {
     paddingTop: '20px',
     paddingBottom: '50px',
     fontSize: '16px',
-    fontWeight: '700',
+    fontWeight: '600',
+    fontFamily: 'Kumbh Sans',
+    letterSpacing: '0.5px',
 }
 
 const pStyle2 = {
@@ -75,6 +84,7 @@ const pStyle2 = {
     textAlign: 'center',
     paddingBottom: '5px',
     fontWeight: '700',
+    
 }
 
 
@@ -90,9 +100,10 @@ const imgStyle2 = {
 }
 
 const spanStyle = {
-    fontSize: '18px',
+    fontSize: '16px',
     paddingLeft: '5px',
     fontWeight: '500',
+    fontFamily: 'Comfortaa',
 }
 
 

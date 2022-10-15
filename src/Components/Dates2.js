@@ -45,6 +45,7 @@ const divStyle2 = {
     flexDirection: 'column',
     alignItems: 'start',
     justifyContent: 'space-around',
+    fontFamily: 'Comfortaa',
 }
 
 const divStyle3 = {
@@ -61,7 +62,7 @@ const divStyle4 = {
 }
 
 const spanStyle = {
-    fontSize: '18px',
+    fontSize: '16px',
     
 }
 
@@ -73,6 +74,7 @@ const imgStyle = {
 
 const porcentaje = {
     textAlign: 'right',
+    fontFamily: 'Comfortaa',
 }
 
 
