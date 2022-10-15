@@ -1,13 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Loading from "./Components/Loading";
 import Error from "./Components/Error";
 import WeatherApp from "./WeatherApp";
+import SearchModal from "./Components/SearchModal";
+
+
 
 function App() {
+
+  const [modalValue, setModalValue] = useState(false);
+
+    const openModal = () => {
+        setModalValue(true);
+        console.log('Modal abierto');
+    }
+
+    const closeModal = () => {
+        setModalValue(false);
+        console.log('Modal cerrado');
+    }
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [resApi, setResApi] = React.useState(null);
   const [error, setError] = React.useState(false);
+
+  
 
   useEffect(() => {
     fetch("https://api.openweathermap.org/data/2.5/weather?lat=-34.60&lon=-58.43&appid=82ba7e681789f0bac388a129ec9847b8&units=metric")
@@ -35,9 +52,15 @@ function App() {
     )
   }
 
+
   return (
-    <WeatherApp resApi={resApi}/>
+    <>
+    <WeatherApp resApi={resApi} openModal={openModal}/>
+    <SearchModal modalValue={modalValue} closeModal={closeModal}/>
+    </>
   )
+
+
   
 }
 

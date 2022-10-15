@@ -2,16 +2,18 @@ import React from "react";
 import {WiDayCloudy} from 'react-icons/wi';
 import {FiWind} from 'react-icons/fi';
 import ThemeButton from "./ThemeButton";
+import SearchButton from "./SearchButton";
 
 
 
-export default function Dates({resApi}) {
+
+export default function Dates({resApi, openModal}) {
 
 
 
     return (
     <div style={divMain}>
-        <h1 style={h1Style}>Zagreb, Croatia<ThemeButton/> </h1>
+        <h1 style={h1Style}>Buenos Aires, AR</h1>
             <p style={pStyleNOW}>Now</p>
             <div style={divMain2}>
                 <WiDayCloudy style={imgStyle1}/>
@@ -21,7 +23,11 @@ export default function Dates({resApi}) {
             <p style={pStyle2}>Wind</p>
             <div style={divMain3}>
                 <FiWind style={imgStyle2}/>
-                <span style={spanStyle}>{resApi.wind.speed}</span>
+                <span style={spanStyle}>{resApi.wind.speed + '/s'}</span>
+            </div>
+            <div style={divBtnStyle}>
+                <SearchButton openModal={openModal}/>
+                <ThemeButton/>
             </div>
     </div>
     )
@@ -106,7 +112,14 @@ const spanStyle = {
     fontFamily: 'Comfortaa',
 }
 
-
+const divBtnStyle = {
+    width: '330px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '25px',
+}
 
 
 

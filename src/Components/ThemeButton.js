@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ChangeTheme from '../Hooks/ChangeTheme';
 import {BiBulb} from "react-icons/bi";
 
@@ -11,22 +10,15 @@ export default function ThemeButton() {
     
    
     return (
-        <div onClick={toggleTheme} style={btnStyle}>
-            <BiBulb style={iconStyle}/>
-        </div>
+        <BiBulb style={iconStyle} onClick={toggleTheme}/>
     )
 }
 
-const btnStyle = {
-    position: 'absolute',
-    display: 'inline',
-    paddingLeft: '62px',
-    top: '15px',
-}
+
 
 const iconStyle = {
-    width: '40px',
-    height: '40px',
+    width: '38px',
+    height: '38px',
     cursor: 'pointer',
 }
 
