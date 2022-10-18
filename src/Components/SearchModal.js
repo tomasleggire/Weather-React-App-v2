@@ -3,19 +3,22 @@ import '../Css/Modal.css';
 
 
 
-export default function SearchModal({modalValue, closeModal}) {
+
+export default function SearchModal({modalValue, closeModal, actualizarDatos}) {
+
+
 
     if (modalValue) {
         return ( 
             
-            <div className="div">
+            <form className="div" onSubmit={actualizarDatos}>
                 <h1 style={h1Style}>How is the weather like in...?</h1>
                 <div style={btnDiv}>
-                    <input type='text' placeholder="Buenos Aires" className="inputStyle"></input>
-                    <p style={searchStyle}>Search</p>
+                    <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city"></input>
+                    <button className="btnSearch">Search</button>
                 </div>
                 <p onClick={closeModal} style={btnCancel}>Cancel</p>
-            </div>
+            </form>
             
             
         )
@@ -37,16 +40,6 @@ const btnDiv = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-}
-
-const searchStyle = {
-    border: 'none',
-    padding: '5px 10px',
-    background: 'none',
-    fontSize: '18px',
-    paddingBottom: '18px',
-    cursor: 'pointer',
-    fontFamily: 'Comfortaa',
 }
 
 const btnCancel = {

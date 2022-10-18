@@ -58,3 +58,20 @@
     background-color: #dae4e7;
     color: rgb(34, 38, 43);
 }
+
+.btnSearch {
+    border: none;
+    padding: 5px 10px;
+    background: none;
+    font-size: 18px;
+    padding-bottom: 18px;
+    cursor: pointer;
+    font-family: 'Comfortaa';
+}
+
+.light .btnSearch {
+    color: rgb(34, 38, 43);
+}
+.dark .btnSearch {
+    color: #dae4e7;
+}

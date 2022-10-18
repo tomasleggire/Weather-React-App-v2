@@ -13,7 +13,7 @@ export default function Dates({resApi, openModal}) {
 
     return (
     <div style={divMain}>
-        <h1 style={h1Style}>Buenos Aires, AR</h1>
+        <h1 style={h1Style}>{resApi.name + ", " + resApi.sys.country}</h1>
             <p style={pStyleNOW}>Now</p>
             <div style={divMain2}>
                 <WiDayCloudy style={imgStyle1}/>
