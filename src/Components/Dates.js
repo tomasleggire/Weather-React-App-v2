@@ -1,5 +1,5 @@
 import React from "react";
-import {WiDayCloudy} from 'react-icons/wi';
+import {WiDayCloudy, WiDaySunny, WiRain, WiNightAltLightning} from 'react-icons/wi';
 import {FiWind} from 'react-icons/fi';
 import ThemeButton from "./ThemeButton";
 import SearchButton from "./SearchButton";
@@ -16,7 +16,10 @@ export default function Dates({resApi, openModal}) {
         <h1 style={h1Style}>{resApi.name + ", " + resApi.sys.country}</h1>
             <p style={pStyleNOW}>Now</p>
             <div style={divMain2}>
-                <WiDayCloudy style={imgStyle1}/>
+                {resApi.weather[0].description.includes('clear') &&  <WiDaySunny style={imgStyle1} />}
+                {resApi.weather[0].description.includes('cloud' || 'clouds') &&  <WiDayCloudy style={imgStyle1} />}
+                {resApi.weather[0].description.includes('rain' || 'rains') &&  <WiRain style={imgStyle1} />}
+                {resApi.weather[0].description.includes('storm' || 'stormy') &&  <WiNightAltLightning style={imgStyle1} />}
                 <h2 style={h2Style}>{Math.round(resApi.main.temp) + "º"}</h2>
             </div>
             <p style={pStyle}>{resApi.weather[0].description[0].toUpperCase() + resApi.weather[0].description.slice(1)}</p>
