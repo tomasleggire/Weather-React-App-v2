@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import {WiDayCloudy, WiDaySunny, WiRain, WiNightAltLightning} from 'react-icons/wi';
+import {TbArrowsDownUp} from 'react-icons/tb';
 import {FiWind} from 'react-icons/fi';
 import ThemeButton from "./ThemeButton";
 import SearchButton from "./SearchButton";
@@ -8,6 +9,16 @@ import SearchButton from "./SearchButton";
 
 
 export default function Dates({resApi, openModal}) {
+
+    const [mainInfo, setMainInfo] = useState(Math.round(resApi.main.temp) + "º");
+
+    const toggleInfo = () => {
+        if (mainInfo === Math.round(resApi.main.temp) + "º") {
+            setMainInfo(Math.round(resApi.main.temp_min) + "/" + Math.round(resApi.main.temp_max));
+        } else {
+            setMainInfo(Math.round(resApi.main.temp) + "º")
+        }
+    }
 
 
 
@@ -20,7 +31,7 @@ export default function Dates({resApi, openModal}) {
                 {resApi.weather[0].description.includes('cloud' || 'clouds') &&  <WiDayCloudy style={imgStyle1} />}
                 {resApi.weather[0].description.includes('rain' || 'rains') &&  <WiRain style={imgStyle1} />}
                 {resApi.weather[0].description.includes('storm' || 'stormy') &&  <WiNightAltLightning style={imgStyle1} />}
-                <h2 style={h2Style}>{Math.round(resApi.main.temp) + "º"}</h2>
+                <h2 style={h2Style} onClick={toggleInfo}>{mainInfo}</h2>
             </div>
             <p style={pStyle}>{resApi.weather[0].description[0].toUpperCase() + resApi.weather[0].description.slice(1)}</p>
             <p style={pStyle2}>Wind</p>
