@@ -9,7 +9,7 @@ export default function SearchModal({modalValue, closeModal, actualizarDatos}) {
             <form className={`div ${!!modalValue && "show"}`} onSubmit={actualizarDatos}>
                 <h1 style={h1Style}>How is the weather like in...?</h1>
                 <div style={btnDiv}>
-                    <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city" autoComplete="none"></input>
+                    <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city" autoComplete="off"></input>
                     <button className="btnSearch">Search</button>
                 </div>
                 <p onClick={closeModal} style={btnCancel}>Cancel</p>

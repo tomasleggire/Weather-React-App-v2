@@ -20,8 +20,6 @@ export default function Dates({resApi, openModal}) {
         }
     }
 
-
-
     return (
     <div style={divMain}>
         <h1 style={h1Style}>{resApi.name + ", " + resApi.sys.country}</h1>
