@@ -5,13 +5,8 @@ import '../Css/Modal.css';
 
 
 export default function SearchModal({modalValue, closeModal, actualizarDatos}) {
-
-
-
-    if (modalValue) {
         return ( 
-            
-            <form className="div" onSubmit={actualizarDatos}>
+            <form className={`div ${!!modalValue && "show"}`} onSubmit={actualizarDatos}>
                 <h1 style={h1Style}>How is the weather like in...?</h1>
                 <div style={btnDiv}>
                     <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city"></input>
@@ -22,9 +17,6 @@ export default function SearchModal({modalValue, closeModal, actualizarDatos}) {
             
             
         )
-    } else {
-       return 
-    }
 }
 
 

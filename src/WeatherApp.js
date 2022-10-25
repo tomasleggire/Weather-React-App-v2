@@ -17,7 +17,7 @@ export default function WeatherApp({resApi, openModal}) {
 
 
 const divStyle = {
-    height: '98vh',
+    height: '80vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',

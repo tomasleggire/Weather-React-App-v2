@@ -1,6 +1,6 @@
 import React from "react";
-
 import {BiSearchAlt2} from "react-icons/bi";
+
 
  
 export default function SearchButton({openModal}) {
@@ -20,3 +20,4 @@ const iconStyle = {
     height: '38px',
     cursor: 'pointer',
 }
+
