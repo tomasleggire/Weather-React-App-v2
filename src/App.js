@@ -5,8 +5,6 @@ import WeatherApp from "./Components/WeatherApp";
 import SearchModal from "./Components/SearchModal";
 
 
-
-
 function App() {
 
   const [modalValue, setModalValue] = useState(false);
@@ -15,8 +13,10 @@ function App() {
   const [resApi, setResApi] = useState(null);
   const [error, setError] = useState(false);
 
+  const [pingCity, setPingCity] = useState('Buenos Aires');
+
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${pingCity}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`)
       .then((response) => response.json())
       .then((clima) => {
         setResApi(clima);
@@ -73,7 +73,8 @@ function App() {
     <SearchModal 
       modalValue={modalValue} 
       closeModal={closeModal}
-      actualizarDatos={actualizarDatos}/>
+      actualizarDatos={actualizarDatos}
+      setPingCity={setPingCity}/>
     </>
   )
 
