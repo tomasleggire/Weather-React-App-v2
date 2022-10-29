@@ -1,6 +1,7 @@
 import React from "react";
 import Dates2 from "./Dates2";
 import Dates from "./Dates";
+import '../Css/WeatherApp.css';
 
 
 export default function WeatherApp({resApi, openModal, modalValue}) {
@@ -17,12 +18,14 @@ export default function WeatherApp({resApi, openModal, modalValue}) {
 
 
 const divStyle = {
-    height: '100vh',
+    height: '85vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '20px 0'
+    padding: '20px 0',
+    transition: '.1s',
 }
 
+//className={`${!!modalValue && 'hide-div'}`}
