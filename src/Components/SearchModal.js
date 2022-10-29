@@ -4,31 +4,59 @@ import {FiHeart} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
 
 
+export default function SearchModal({modalValue, closeModal, actualizarDatos, setResApi, setIsLoading, setError, setModalValue}) {
 
+    const [listado, setListado] = useState(['Madrid', 'Peru', 'Alemania']);
+    const [itemFav, setItemFav] = useState('');
 
-export default function SearchModal({modalValue, closeModal, actualizarDatos}) {
+    const changeFav = (e) => {
+        setItemFav(e.target.value);
+    }
 
-    const [listado, setListado] = useState(['Madrid', 'Peru', 'Alemania', 'Alemania', 'Alemania', 'Alemania', 'Alemania', 'Alemania']);
+    const addFav = (text) => {
+        if(text) {
+          setListado([...listado, text]);
+          setItemFav('');
+        } else return
+    }
+
+    const deleteFav = (text) => {
+        let index = listado.indexOf(text);
+        listado.splice(index, 1);
+        setListado([...listado]);
+    }
+
+    const mostrarFav = async (text) => {
+        setIsLoading(true);
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`);
+        if (!res.ok) {
+          setError(true);
+        }
+        const data = await res.json();
+        setIsLoading(false);
+        setResApi(data);
+        console.log(data);
+        setModalValue(false);
+    }
 
     const ItemListado = (text) => {
         return (
             <div className="listado-div">
-              <li className="li">
+              <li className="li" onClick={() => mostrarFav(text)}>
                   {text}
               </li>
-                <FiX className="delete"/>
+                <FiX className="delete" onClick={() => deleteFav(text)}/>
             </div>
         )
     }
-
 
         return ( 
             <form className={`div ${!!modalValue && "show"}`} onSubmit={actualizarDatos}>
                 <div className="search-div">
                   <h1 style={h1Style}>How is the weather like in...?</h1>
                   <div style={btnDiv}>
-                      <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city" autoComplete="off"></input>
-                      <FiHeart className="fav"/>
+                      <input type='text' placeholder="Buenos Aires" className="inputStyle" name="city" autoComplete="off" onChange={changeFav} value={itemFav}></input>
+                      <FiHeart className="fav" onClick={() => addFav(itemFav)}/>
                       <button className="btnSearch">Search</button>
                   </div>
                 <ul className="ul">

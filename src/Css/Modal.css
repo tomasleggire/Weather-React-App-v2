@@ -94,6 +94,7 @@
     margin-bottom: 18px;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 
@@ -103,7 +104,6 @@
     margin: 14px 15px;
     margin-top: 20px;
     height: 340px;
-    border: 2px solid red;
     overflow-y: auto;
 }
 

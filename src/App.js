@@ -41,6 +41,7 @@ function App() {
       e.preventDefault();
       const {city} = e.target.elements;
       const cityValue = city.value;
+      setPingCity(city);
       const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`;
       setIsLoading(true);
       const res = await fetch(API_URL);
@@ -74,7 +75,11 @@ function App() {
       modalValue={modalValue} 
       closeModal={closeModal}
       actualizarDatos={actualizarDatos}
-      setPingCity={setPingCity}/>
+      setIsLoading={setIsLoading}
+      setResApi={setResApi}
+      setError={setError}
+      setModalValue={setModalValue}
+    />
     </>
   )
 
