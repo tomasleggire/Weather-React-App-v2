@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Components/Loading";
 import Error from "./Components/Error";
-import WeatherApp from "./WeatherApp";
+import WeatherApp from "./Components/WeatherApp";
 import SearchModal from "./Components/SearchModal";
 
 
@@ -69,7 +69,7 @@ function App() {
 
   return (
     <>
-    <WeatherApp resApi={resApi} openModal={openModal}/>
+    <WeatherApp resApi={resApi} openModal={openModal} modalValue={modalValue}/>
     <SearchModal 
       modalValue={modalValue} 
       closeModal={closeModal}

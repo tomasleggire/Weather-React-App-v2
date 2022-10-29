@@ -35,7 +35,6 @@ export default function Dates2({resApi}) {
 
 const divStyle = {
     width: '280px',
-    paddingBottom: '20px',
     display: 'flex',
     justifyContent: 'space-between',
 }

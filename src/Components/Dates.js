@@ -131,6 +131,7 @@ const divBtnStyle = {
     alignItems: 'center',
     position: 'absolute',
     top: '25px',
+    paddingTop: '10px',
 }
 
 
