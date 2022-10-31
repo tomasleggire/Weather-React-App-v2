@@ -13,7 +13,13 @@ function App() {
   const [resApi, setResApi] = useState(null);
   const [error, setError] = useState(false);
 
-  const [pingCity, setPingCity] = useState('Buenos Aires');
+  const [pingCity, setPingCity] = useState(
+    JSON.parse(localStorage.getItem('pingcity')) || 'Buenos Aires'
+  )
+
+  useEffect(() => {
+    localStorage.setItem('pingcity', JSON.stringify(pingCity)) 
+  }, [pingCity])
 
   useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${pingCity}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`)
@@ -41,7 +47,7 @@ function App() {
       e.preventDefault();
       const {city} = e.target.elements;
       const cityValue = city.value;
-      setPingCity(city);
+      setPingCity(cityValue);
       const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`;
       setIsLoading(true);
       const res = await fetch(API_URL);
@@ -79,6 +85,7 @@ function App() {
       setResApi={setResApi}
       setError={setError}
       setModalValue={setModalValue}
+      setPingCity={setPingCity}
     />
     </>
   )

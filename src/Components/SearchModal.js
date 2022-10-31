@@ -1,13 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import '../Css/Modal.css';
 import {FiHeart} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
 
 
-export default function SearchModal({modalValue, closeModal, actualizarDatos, setResApi, setIsLoading, setError, setModalValue}) {
+export default function SearchModal({modalValue, closeModal, actualizarDatos, setResApi, setIsLoading, setError, setModalValue, setPingCity}) {
 
-    const [listado, setListado] = useState(['Madrid', 'Peru', 'Alemania']);
+    const [listado, setListado] = useState(
+        JSON.parse(localStorage.getItem('favorites')) || []
+    );
     const [itemFav, setItemFav] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(listado))
+    }, [listado]);
+
 
     const changeFav = (e) => {
         setItemFav(e.target.value);
@@ -27,6 +34,7 @@ export default function SearchModal({modalValue, closeModal, actualizarDatos, se
     }
 
     const mostrarFav = async (text) => {
+        setPingCity(text);
         setIsLoading(true);
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=82ba7e681789f0bac388a129ec9847b8&units=metric`);
         if (!res.ok) {
@@ -93,5 +101,5 @@ const btnCancel = {
     cursor: 'pointer',
     opacity: '.5',
     fontFamily: 'Comfortaa',
-    paddingBottom: '30px',
+    paddingBottom: '15px',
 }
