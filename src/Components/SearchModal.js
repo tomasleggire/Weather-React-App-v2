@@ -68,6 +68,7 @@ export default function SearchModal({modalValue, closeModal, actualizarDatos, se
                       <button className="btnSearch">Search</button>
                   </div>
                 <ul className="ul">
+                    {listado.length === 0 && <p className="emptyList">Try to add to fav</p>}
                     {listado.map((item) => (
                         ItemListado(item)
                     ))}

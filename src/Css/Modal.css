@@ -126,3 +126,11 @@
     width: 30px;
     height: 30px;
 }
+
+.emptyList {
+    text-align: center;
+    opacity: .5;
+    font-size: 22px;
+    align-self: center;
+    justify-self: center;
+}
