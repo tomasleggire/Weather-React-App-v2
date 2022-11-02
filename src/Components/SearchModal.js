@@ -17,7 +17,7 @@ export default function SearchModal({modalValue, closeModal, actualizarDatos, se
 
 
     const changeFav = (e) => {
-        setItemFav(e.target.value);
+        setItemFav(e.target.value); 
     }
 
     const addFav = (text) => {
